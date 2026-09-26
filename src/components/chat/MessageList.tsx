@@ -91,7 +91,7 @@ export function MessageList({
         <div ref={messagesEndRef} />
         {hasMessages && isLoading && <LoadingIndicator overlay />}
       </div>
-      <div className="absolute self-center z-10">
+      <div className="absolute self-center z-10 inset-0">
         {hasMessages && isLoading && <LoadingIndicator />}
       </div>
     </div>
