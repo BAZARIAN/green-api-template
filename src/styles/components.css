@@ -1,0 +1,14 @@
+@layer components { 
+    .bg-noise {
+        @apply bg-grey-1000;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url('/img/noise.png');
+        background-position: 0 0;
+        background-size: 1440px;
+        width: 100vw;
+        height: 100vh;
+    }
+}

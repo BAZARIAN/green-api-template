@@ -1,0 +1,348 @@
+@layer components {
+  .app-layout {
+    @apply relative flex h-full min-h-0 flex-auto overflow-hidden;
+  }
+
+  .auth-layout {
+    @apply grid min-h-screen place-items-center px-4 py-8;
+  }
+
+  .auth-card {
+    @apply p-6 w-full max-w-md rounded-2xl border border-slate-50/5 bg-grey-950/80 backdrop-blur;
+  }
+
+  .auth-brand {
+    @apply mb-10 flex items-center gap-3;
+  }
+
+  .auth-card h1 {
+    @apply mt-2 text-2xl font-extrabold text-slate-800;
+  }
+
+  .auth-description {
+    @apply mt-3 text-xs leading-relaxed text-slate-400;
+  }
+
+  .auth-form {
+    @apply mt-7 gap-4 flex flex-col;
+  }
+
+  .auth-note {
+    @apply mt-5 border-t border-slate-100 pt-4 text-xs leading-relaxed text-slate-400;
+  }
+
+  .sidebar-wrap {
+    @apply w-64 min-w-64 h-full bg-grey-900 p-4 border-r border-grey-50/5;
+  }
+
+  .sidebar {
+    @apply h-full w-full flex flex-col gap-2;
+  }
+
+  .sidebar-brand {
+    @apply mb-8 flex items-center justify-between gap-3 px-3;
+  }
+
+  .brand-mark {
+    @apply grid size-10 place-items-center rounded-xl bg-brand text-grey-50 shadow-lg shadow-blue-200;
+  }
+
+  .brand-name {
+    @apply text-base font-extrabold text-slate-800;
+  }
+
+  .brand-caption {
+    @apply mt-0.5 text-xs text-slate-400;
+  }
+
+  .section-label {
+    @apply text-xl font-semibold text-grey-50;
+  }
+
+  .sidebar-section-heading {
+    @apply flex items-center justify-between;
+  }
+
+  .chat-list {
+    @apply min-h-0 flex-1 space-y-1 overflow-y-auto;
+  }
+  .chat-list::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  .chat-list-state {
+    @apply px-3 py-4 text-center text-xs text-grey-400;
+  }
+
+  .chat-preview {
+    @apply flex w-full items-center gap-2.5 rounded-md p-2.5 text-left;
+  }
+
+  .chat-preview:not(.chat-preview-active):hover {
+    @apply bg-grey-50/5;
+  }
+
+  .chat-preview-active {
+    @apply bg-grey-700;
+  }
+
+  .chat-preview-active .chat-preview-title > strong {
+    @apply text-grey-50;
+  }
+
+  .chat-preview-title {
+    @apply flex min-w-0 items-center justify-between gap-2;
+  }
+
+  .unread-badge {
+    @apply grid min-w-5 place-items-center rounded-full bg-brand px-1.5 py-0.5 text-xs font-bold text-grey-50;
+  }
+
+  .avatar {
+    @apply relative grid shrink-0 place-items-center overflow-hidden rounded-full bg-grey-50/5 text-grey-400;
+  }
+
+  .avatar svg {
+    @apply m-1;
+  }
+
+  .avatar-md {
+    @apply size-10;
+  }
+
+  .avatar-sm {
+    @apply size-9;
+  }
+
+  .avatar-image {
+    @apply absolute size-full rounded-full object-cover;
+  }
+
+  .link {
+    @apply cursor-pointer text-primary-700 hover:text-primary-600;
+  }
+
+  button.spinner > svg {
+    @apply animate-spin;
+  }
+
+  .secondary-button,
+  .primary-button {
+    @apply flex items-center justify-center gap-1.5 rounded-md text-base font-medium transition;
+  }
+
+  .secondary-button {
+    @apply border border-grey-50/5 bg-grey-900 py-2.5 text-slate-600 hover:bg-slate-50;
+  }
+
+  .primary-button {
+    @apply h-10 w-full bg-brand text-grey-50 hover:bg-brand-dark;
+  }
+
+  .new-chat-form {
+    @apply flex items-center gap-2;
+  }
+
+  .new-chat-input {
+    @apply h-10 min-w-0 flex-1 rounded-md bg-grey-1000 px-2 text-sm text-grey-50;
+  }
+
+  .new-chat-submit {
+    @apply grid size-10 shrink-0 place-items-center rounded-md bg-brand text-grey-50 transition hover:bg-brand-dark disabled:opacity-50;
+  }
+
+  .sidebar-footer {
+    @apply mt-auto flex flex-col gap-2;
+  }
+
+  .divider-x {
+    @apply h-[1px] bg-grey-50/10 rounded-md;
+  }
+
+  .chat-layout {
+    @apply flex h-full min-h-0 min-w-0 flex-auto flex-col bg-grey-1000 relative;
+  }
+
+  .chat-header {
+    @apply flex min-h-[76px] items-center justify-between border-b border-grey-50/5 px-4 py-4;
+  }
+
+  .icon-button {
+    @apply grid p-1.5 place-items-center rounded-md transition text-grey-400 hover:text-grey-200 hover:bg-grey-850;
+  }
+  .icon-button.red {
+    @apply text-red-400 hover:text-red-400 hover:bg-red-400/5;
+  }
+  .icon-button > svg {
+    @apply w-4.5 h-4.5 flex-shrink-0;
+  }
+
+  .message-area {
+    @apply min-h-0 flex-1 overflow-auto;
+  }
+
+  .message-list {
+    @apply relative mx-auto flex min-h-full w-[calc(100%-24px)] flex-col gap-3 py-2;
+  }
+
+  .message-items {
+    @apply flex flex-col gap-3;
+  }
+
+  .message-row {
+    @apply flex w-full;
+  }
+
+  .date-divider {
+    @apply mx-auto mb-1 justify-self-center flex items-center gap-3 text-xs text-grey-400/50 before:h-px before:w-10 before:bg-grey-400/50 after:h-px after:w-10 after:bg-grey-400/50;
+  }
+
+  .empty-chat {
+    @apply m-auto max-w-xs -translate-y-5 text-center;
+  }
+
+  .empty-chat-icon {
+    @apply mx-auto mb-4 grid size-16 place-items-center rounded-2xl bg-grey-50 text-grey-900;
+  }
+
+  .empty-chat h2 {
+    @apply text-lg font-extrabold text-grey-50;
+  }
+
+  .empty-chat p {
+    @apply text-xs leading-relaxed text-grey-400;
+  }
+
+  .chat-loader {
+    @apply m-auto grid size-12 place-items-center;
+  }
+
+  .chat-loader-overlay {
+    @apply pointer-events-none absolute inset-0 z-10 m-0 size-auto bg-grey-1000/45 backdrop-blur-[1px];
+  }
+
+  .chat-loader span {
+    @apply size-8 animate-spin rounded-full border-[3px] border-grey-400/30 border-t-brand;
+  }
+
+  .message-attachment {
+    @apply mt-1 block rounded bg-blue-50/10 px-2 py-1 text-xs text-blue-100 underline;
+  }
+
+  .message-bubble {
+    @apply max-w-[86%] rounded-xl px-3 py-2 text-sm leading-relaxed shadow-sm sm:max-w-[78%];
+  }
+
+  .message-bubble-incoming {
+    @apply rounded-bl-sm bg-grey-900 text-grey-50;
+  }
+
+  .message-bubble-outgoing {
+    @apply rounded-br-sm bg-brand text-grey-50;
+  }
+
+  .message-meta {
+    @apply mt-1 flex items-center justify-end gap-1 text-xs;
+  }
+
+  .message-meta-incoming {
+    @apply text-grey-400;
+  }
+
+  .message-meta-outgoing {
+    @apply text-blue-200;
+  }
+
+  .message-status {
+    @apply flex items-center;
+  }
+
+  .message-status-second-check {
+    @apply -ml-2;
+  }
+
+  .message-composer {
+    @apply flex min-h-[68px] items-center gap-2 border-t border-grey-50/5 bg-grey-900 px-3 py-3 sm:min-h-[76px] sm:px-8;
+  }
+
+  .composer-attachment {
+    @apply hidden sm:grid;
+  }
+
+  .composer-input-wrap {
+    @apply relative min-w-0 flex-1 flex items-center;
+  }
+
+  .composer-input,
+  .form-input {
+    @apply w-full rounded-md bg-grey-1000 text-grey-50 outline-none transition placeholder:text-grey-700;
+  }
+
+  .composer-input {
+    @apply h-11 px-4 pr-12;
+  }
+
+  .form-input {
+    @apply h-10 px-3 text-base;
+  }
+
+  .composer-action {
+    @apply absolute right-1 hover:bg-transparent;
+  }
+
+  .send-button {
+    @apply grid size-11 place-items-center rounded-md bg-brand text-grey-50 transition hover:bg-brand-dark disabled:cursor-default disabled:opacity-45;
+  }
+
+  .chat-feedback {
+    @apply absolute bottom-20 left-1/2 z-10 max-w-[calc(100%-2rem)] -translate-x-1/2 rounded-md px-3 py-2 text-xs shadow-lg;
+  }
+
+  .chat-feedback-error {
+    @apply bg-red-50 text-red-700;
+  }
+
+  .chat-feedback-notice {
+    @apply bg-emerald-50 text-emerald-700;
+  }
+
+  .settings-heading {
+    @apply flex items-start justify-between gap-3;
+  }
+
+  .settings-heading h2 {
+    @apply mt-2 text-lg font-extrabold text-slate-800;
+  }
+
+  .settings-description {
+    @apply my-4 text-xs leading-relaxed text-slate-400;
+  }
+
+  .settings-field {
+    @apply grid gap-2 text-xs text-grey-450 flex-1;
+  }
+
+  .settings-divider {
+    @apply my-6 h-px bg-slate-100;
+  }
+
+  .recipient-label {
+    @apply mb-3;
+  }
+
+  .recipient-hint {
+    @apply mb-5 text-xs leading-relaxed text-slate-400;
+  }
+
+  .recipient-hint strong {
+    @apply font-semibold text-slate-600;
+  }
+
+  .feedback {
+    @apply rounded-md p-3 text-sm;
+  }
+
+  .feedback-error {
+    @apply bg-red-400/5 text-red-400;
+  }
+}

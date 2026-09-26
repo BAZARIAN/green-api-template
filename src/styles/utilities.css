@@ -1,0 +1,15 @@
+@layer utilities {
+  .scroll-right-margin {
+    margin-right: calc(-1 * (100vw - 100%));
+  }
+
+  .loading {
+    @apply animate-pulse !text-transparent bg-grey-800 rounded-md select-none pointer-events-none;
+    animation-duration: 1s;
+  }
+  .loading_text {
+    @apply loading inline-block leading-none text-nowrap;
+  }
+
+  @keyframes progress-bar-stripes-1{ 0%{background-position:1em 0} to {background-position:0 0} }
+}
